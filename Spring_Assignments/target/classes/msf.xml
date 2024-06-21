@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<bean id="mds" class="FirstSpring.MyDataSource">
+	  <property name="url" value ="Springurl"></property>
+	  <property name="username" value="admin"></property>
+	  <property name="password" value="tiger"></property>
+	  <property name="dataClassName" value="jdbcurl"></property>
+	
+	</bean>
+	
+	<bean id="mds2" class="FirstSpring.MyDataSource">
+	  <property name="url" value ="Springurl1"></property>
+	  <property name="username" value="admin1"></property>
+	  <property name="password" value="tiger"></property>
+	  <property name="dataClassName" value="jdbcurl"></property>
+	
+	</bean>
+	
+	<bean id="mfs" class="FirstSpring.MySessionFactory">
+	   <property name="datasource" ref="mds2"></property>
+	   <property name="hbm2_ddl_auto" value="yes"></property>
+	   <property name="dialect" value="MYSQL8"></property>
+	   <property name="show_sql" value="true"></property>
+	   <property name="format_sql" value="true"></property>
+	</bean>
+
+</beans>
